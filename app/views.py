@@ -1,5 +1,7 @@
 from flask import render_template
 from app import app
+from flask import json
+from flask import request
 
 
 @app.route('/')
@@ -19,3 +21,11 @@ def getControllerView():
 @app.route('/directives')
 def getDirectiveView():
     return app.send_static_file('dbgame/views/directive.html')
+
+@app.route('/file')
+def getD():
+    return app.send_static_file('dbgame/views/directive.html')
+
+@app.route('/asset', methods=['POST'])
+def message():
+    return app.send_static_file('' + request.json['file'])
