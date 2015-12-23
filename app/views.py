@@ -7,8 +7,7 @@ from flask import request
 @app.route('/')
 @app.route('/index')
 def index():
-    user = {'nickname': 'Miguel'}  # fake user
-    return render_template('index.html',user=user, title='your mom')
+    return render_template('index.html',title='welcome to daves python app. ')
 
 @app.route('/test1')
 def getit():
